@@ -1,0 +1,30 @@
+# Terraform
+# ----------
+**/.terraform/ 
+# **/ -> recursive wildcard (any number of directories deep)
+*.tfstate*
+# covers terraform.tfstate, terraform.tfstate.backup etc.
+crash.log
+crash.*.log
+*.tfvars
+# tfvars.example is NOT covered by the above, but is could also be explicitely excluded using the prefix "!"
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+# overrrides are usually local-only changes
+.terraformrc
+terraform.rc
+# terraform*rc are user-specific settings (credentials, mirrors, proxies)
+
+# IDE
+.vscode/
+# used when you customize VS Code settings for teh workspace (e.g. launch configurations)
+
+
+# Secrets
+*.pem
+*.key
+secrets/
+# even though these patterns are currently not used, they are added here preemptively 
+# because accidentally committing a private key is a serious security risk 
